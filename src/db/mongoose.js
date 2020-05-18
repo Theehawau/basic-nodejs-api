@@ -8,5 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 mongoose.connect( "mongodb+srv://Theehawau:basicnodeapp@cluster0-grbed.mongodb.net/test?retryWrites=true&w=majority" ,{ 
     useNewUrlParser: true, 
     useUnifiedTopology: true
-})
+}).catch(
+     err => console.log(err.reason)
+)
 

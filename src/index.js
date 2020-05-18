@@ -6,7 +6,7 @@ const User = require('./models/user')
 app.use(express.json(type = 'application/json'))
 app.use(express.urlencoded({ extended: true }))
 
-app.post('/api/users', (req,res,next) =>{
+app.post('/api/users', (req,res) =>{
     const user = new User(req.body)
     user.save().then(() => {
         res.send(user)
@@ -17,7 +17,7 @@ app.post('/api/users', (req,res,next) =>{
 app.get('/', (req,res) => {
     res.send('connected')
 })
-app.get('/api/users', (req,res,next) =>{
+app.get('/api/users', (req,res) =>{
     User.find({}).then((users) => {
         res.send(users)
     }).catch(
