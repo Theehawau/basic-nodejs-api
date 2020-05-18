@@ -7,7 +7,14 @@ const port = process.env.PORT || 4000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
 app.get('/', (req,res) => res.send('connescted'))
+app.get('/api/users', (req,res) => {
+    User.find({}).then(user => res.json(user)).catch(
+            err => res.send(err)
+        )
+}
+    )
 app.get('/api/users', async (req,res) => {
     try {
         const users = await User.find({})
