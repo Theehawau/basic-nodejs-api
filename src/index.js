@@ -17,7 +17,13 @@ app.post('/api/users', (req,res,next) =>{
 app.get('/', (req,res) => {
     res.send('connected')
 })
-
+app.get('/api/users', (req,res,next) =>{
+    User.find({}).then((users) => {
+        res.send(users)
+    }).catch(
+            err => console.log(err)
+        )
+})
 app.listen(port, ()=>{
     console.log('Server running on port' +port);
 })
