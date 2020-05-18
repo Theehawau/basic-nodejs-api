@@ -11,7 +11,14 @@ app.listen(port, ()=>{
     console.log('Server running on port' +port);
 })
 app.get('/', (req,res) => res.send('connescted'))
-
+app.get('/api', async (req,res) => {
+    try {
+        const users = await User.find({})
+        res.json(users)
+    } catch (error) {
+        res.status(500).send() 
+    }
+})
 app.get('/api/users', async (req,res) => {
     try {
         const users = await User.find({})
