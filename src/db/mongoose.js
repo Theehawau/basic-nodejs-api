@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
+
 if (process.env.NODE_ENV === 'production') {
     const uri = process.env.MONGO_DB_URI
-  }else {
-    const uri = 'mongodb://127.0.0.1:27017/basic-node-js-api'
-  }
+}else{
+    uri = 'mongodb://127.0.0.1:27017/basic-node-js-api'
+}
+     
 
-mongoose.connect(uri,{ 
+
+mongoose.connect( uri ,{ 
     useNewUrlParser: true, 
     useUnifiedTopology: true
 })
