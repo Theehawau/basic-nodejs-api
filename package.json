@@ -2,8 +2,7 @@
   "name": "bitbrothersapplication",
   "version": "1.0.0",
   "description": "Basic nodejs API for internship application to Bit Brothers",
-  "main": "src/app.js",
-  "start": "node src/app.js",
+  "main": " src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js -e js,hbs"

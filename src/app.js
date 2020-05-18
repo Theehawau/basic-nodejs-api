@@ -7,9 +7,7 @@ const port = process.env.PORT || 4000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.listen(port, ()=>{
-    console.log('Server running on port' +port);
-})
+
 app.get('/', (req,res) => res.send('connescted'))
 app.get('/api', async (req,res) => {
     try {
@@ -72,5 +70,7 @@ app.post('/api/users', async (req,res) => {
         res.status(400).send()
     }
 })
-
+app.listen(port, ()=>{
+    console.log('Server running on port' +port);
+})
 
