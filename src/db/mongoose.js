@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === 'production') {
 }else{
      uri = 'mongodb://127.0.0.1:27017/basic-node-js-api'
 }
-mongoose.connect( uri ,{ 
+mongoose.connect( "mongodb+srv://Theehawau:basicnodeapp@cluster0-grbed.mongodb.net/test?retryWrites=true&w=majority" ,{ 
     useNewUrlParser: true, 
     useUnifiedTopology: true
 })
